@@ -1,0 +1,30 @@
+definition_version: "2"
+
+entities:
+  image_scale_studio:
+    type: snowflake-app
+    identifier:
+      name: IMAGE_SCALE_STUDIO
+      database: USER$KBURNS
+      schema: PUBLIC
+    artifacts:
+      - src: ./*
+        dest: ./
+        ignore:
+          - node_modules
+          - .env*
+          - __pycache__
+          - "*.pyc"
+          - .next
+          - .git
+          - snowflake.log
+          - output
+
+    query_warehouse: D4B_WH
+    build_compute_pool:
+      name: SYSTEM_COMPUTE_POOL_CPU
+    service_compute_pool:
+      name: SYSTEM_COMPUTE_POOL_CPU
+    build_eai:
+      name: ALLOW_ALL_INTEGRATION
+    code_workspace: USER$KBURNS.PUBLIC.SNOWFLAKE_APPS

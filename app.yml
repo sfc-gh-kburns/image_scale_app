@@ -1,0 +1,11 @@
+install:
+  commands:
+    - ["npm", "ci", "--include=dev"]
+
+run:
+  command: ["node", ".next/standalone/server.js"]
+
+profile:
+  label: "Image Scale Studio"
+  description: "Upload product images and scale them for retail partners, add banners, or resize to custom dimensions."
+  icon: public/icon.svg
